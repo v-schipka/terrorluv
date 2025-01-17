@@ -10,21 +10,21 @@
       text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #fff0fa;
+      background-color: #ffe6f2; /* Light pink background */
     }
     .container {
       max-width: 600px;
-      margin: 50px auto;
+      margin: 30px auto;
       padding: 20px;
       border-radius: 10px;
-      background: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: #fff0f5; /* Lavender blush */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      color: #333;
+    h1, h2 {
+      color: #d63384; /* Vivid pink for headings */
     }
     button {
-      background-color: #ff62ed;
+      background-color: #ff66b2; /* Medium pink */
       color: white;
       border: none;
       padding: 10px 20px;
@@ -33,12 +33,51 @@
       font-size: 16px;
     }
     button:hover {
-      background-color: #cc0070;
+      background-color: #e05599; /* Slightly darker pink on hover */
     }
     .prompt {
       margin-top: 20px;
       font-size: 18px;
-      color: #555;
+      color: #c2185b; /* Deep pink */
+    }
+    .links-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .links-container h2 {
+      color: #d63384; /* Matches heading color */
+    }
+    .links-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .links-container ul li {
+      margin: 10px 0;
+    }
+    .links-container ul li a {
+      color: #ff4081; /* Bright pink for links */
+      text-decoration: none;
+    }
+    .links-container ul li a:hover {
+      text-decoration: underline;
+      color: #c2185b; /* Darker pink on hover */
+    }
+    .links-container h1 {
+    color: #d63384; /* Matches heading color */
+    text-align: center; /* Center the headline */
+    }
+   .image-container {
+      margin-top: 40px;
+      padding: 20px;
+      background: #fff0f5; /* Matches other containers */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: #d63384; /* Matches heading color */
+      text-align: center; /* Center the headline */
+    }
+    .image-container img {
+      max-width: 100%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -47,6 +86,44 @@
     <h1>Monatliche Herausforderung</h1>
     <button id="generate-btn">Gib mir ein Thema!</button>
     <p class="prompt" id="prompt-display"></p>
+  </div>
+  <div class="container links-container">
+    <h1>Links zu wichtigen Dokumenten</h2>
+    <ul id="links-list">
+      <li><a href="https://docs.google.com/document/d/1wi9Z90FeoZKTsllJP7k7J8qr4xsTOvaqmvv08UtVZwg/edit?tab=t.0" target="_blank">Gildenstärke (Danke an Mori)</a></li>
+      <li><a href="https://drive.google.com/file/d/1df3aBtCpWeA5c6tdAaS-SU5cuKn0Px1C/view" target="_blank">Werte der SSR Karten (Danke an Elster)</a></li>
+    </ul>
+  </div>
+  <div class="container image-container">
+    <h1>WeWe's Juwelen-Liste</h1>
+    <img src="images/juwelen.png" alt="Juwelen">
+  </div>
+  <div class="container image-container">
+    <h1>Mori's Brunnen-Vorhersage</h1>
+    Freitag, 17. Januar 2025<br>
+    Freitag, 31. Januar 2025<br>
+    Freitag, 14. Februar 2025<br>
+    Freitag, 28. Februar 2025<br>
+    Freitag, 14. März 2025<br>
+    Montag, 31. März 2025<br>
+    Freitag, 18. April 2025<br>
+    Mittwoch, 30. April 2025<br>
+    Freitag, 16. Mai 2025<br>
+    Samstag, 31. Mai 2025<br>
+    Freitag, 20. Juni 2025<br>
+    Montag, 30. Juni 2025<br>
+    Freitag, 17. Juli 2025<br>
+    Donnerstag, 31. Juli 2025<br>
+    Freitag, 15. August 2025<br>
+    Sonntag, 31. August 2025<br>
+    Freitag, 12. September 2025<br>
+    Donnerstag, 30. September 2025<br>
+    Freitag, 17. Oktober 2025<br>
+    Freitag, 31. Oktober 2025<br>
+    Freitag, 14. November 2025<br>
+    Sonntag, 30. November 2025<br>
+    Freitag, 12. Dezember 2025<br>
+    Mittwoch, 31. Dezember 2025<br>
   </div>
   <script src="script.js"></script>
 </body>
