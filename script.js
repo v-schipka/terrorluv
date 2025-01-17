@@ -4,6 +4,8 @@ const prompts = [
     "Kälte",
     "Gute Vorsätze",
     "Erste Blumen im Schnee",
+    "Gemütlichkeit",
+    "Selbstfindung"
   ];
   
 // Function to get a random prompt
