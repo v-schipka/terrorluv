@@ -31,6 +31,11 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+      margin: 5px;
+    }
+    button:disabled {
+      background-color: #f5b7d1; /* Lighter pink for disabled state */
+      cursor: not-allowed;
     }
     button:hover {
       background-color: #e05599; /* Slightly darker pink on hover */
@@ -79,13 +84,25 @@
       max-width: 100%;
       border-radius: 10px;
     }
+    .prompt, .challenge {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #c2185b; /* Deep pink (matches both .prompt and .challenge) */
+    }
+    .challenge {
+      margin-top: 10px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Monatliche Herausforderung</h1>
     <button id="generate-btn">Gib mir ein Thema!</button>
+    <button id="challenge-btn">Gib mir eine Herausforderung!</button>
     <p class="prompt" id="prompt-display">Erhalte ein zufälliges Thema für den Januar.</p>
+    <p class="challenge" id="challenge-display"></p>
+    <button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button>
   </div>
   <div class="container links-container">
     <h1>Links zu wichtigen Dokumenten</h2>
