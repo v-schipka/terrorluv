@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f2; /* Light pink background */
+  }
+  /* Page container for everything */
+  .page-container {
+    display: flex;
+    flex-direction: column; /* Stack TOC on top of the content */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+  }
+
+  /* TOC container at the top */
+  .toc-container {
+    width: 100%; /* Full width for the TOC */
+    max-width: 800px; /* Match other container widths */
+    background-color: #fff0f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #d63384;
+    margin-bottom: 20px; /* Add spacing between TOC and content */
+  }
+
+  /* Content wrapper below TOC */
+  .content-wrapper {
+    max-width: 800px;
+    width: 100%;
+    color: #c2185b;
+  }
+  .content-wrapper ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .content-wrapper ul li {
+    margin: 10px 0;
+  }
+  .content-wrapper ul li a {
+    color: #ff4081; /* Bright pink for links */
+    text-decoration: none;
+  }
+  .content-wrapper ul li a:hover {
+    text-decoration: underline;
+    color: #c2185b; /* Darker pink on hover */
+  }
+  /* Individual content sections */
+  .container {
+    margin-bottom: 20px;
+  }
+
+  /* Smooth scrolling effect */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff0f5; /* Lavender blush */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  h1, h2 {
+    color: #d63384; /* Vivid pink for headings */
+  }
+  button {
+    background-color: #ff66b2; /* Medium pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+  }
+  button:disabled {
+    background-color: #f5b7d1; /* Lighter pink for disabled state */
+    cursor: not-allowed;
+  }
+  button:hover {
+    background-color: #e05599; /* Slightly darker pink on hover */
+  }
+  .prompt {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #c2185b; /* Deep pink */
+  }
+  .links-container {
+    margin-top: 40px;
+    text-align: center;
+    color: #d63384;
+  }
+  .links-container h2 {
+    color: #d63384; /* Matches heading color */
+  }
+  .links-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .links-container ul li {
+    margin: 10px 0;
+  }
+  .links-container ul li a {
+    color: #ff4081; /* Bright pink for links */
+    text-decoration: none;
+  }
+  .links-container ul li a:hover {
+    text-decoration: underline;
+    color: #c2185b; /* Darker pink on hover */
+  }
+  .links-container h1 {
+    color: #d63384; /* Matches heading color */
+    text-align: center; /* Center the headline */
+  }
+ .image-container {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff0f5; /* Matches other containers */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #d63384; /* Matches heading color */
+    text-align: center; /* Center the headline */
+  }
+  .image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .grid-container-wrapper {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff0f5; /* Matches other containers */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #d63384; /* Matches heading color */
+    max-width: 800px; /* Set fixed width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+  }
+  .grid-container-wrapper h1 {
+    text-align: center;
+    color: #d63384; /* Matches content color */
+    margin-bottom: 20px; /* Space between headline and grid */
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between items */
+    background: none; /* Remove any background or border */
+    box-shadow: none; /* Remove the box shadow */
+  }
+
+  .grid-container .grid-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .prompt, .challenge {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #c2185b; /* Deep pink (matches both .prompt and .challenge) */
+  }
+  .challenge {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    position: relative;
+    cursor: pointer;
+    background-color: #d63384; /* Set the header background to pink */
+    color: white;
+  }
+
+  th .arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  /* Default arrow (ascending order) */
+  th .arrow.asc::after {
+    content: "↑"; /* Up arrow */
+    opacity: 1;
+  }
+
+  /* Arrow for descending order */
+  th .arrow.desc::after {
+    content: "↓"; /* Down arrow */
+    opacity: 1;
+  }
+
+  th:hover .arrow {
+    opacity: 1;
+  }

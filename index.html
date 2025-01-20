@@ -3,226 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monatliche Herausforderung</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background-color: #ffe6f2; /* Light pink background */
-    }
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 10px;
-      background: #fff0f5; /* Lavender blush */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2 {
-      color: #d63384; /* Vivid pink for headings */
-    }
-    button {
-      background-color: #ff66b2; /* Medium pink */
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 5px;
-    }
-    button:disabled {
-      background-color: #f5b7d1; /* Lighter pink for disabled state */
-      cursor: not-allowed;
-    }
-    button:hover {
-      background-color: #e05599; /* Slightly darker pink on hover */
-    }
-    .prompt {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #c2185b; /* Deep pink */
-    }
-    .links-container {
-      margin-top: 40px;
-      text-align: center;
-      color: #d63384;
-    }
-    .links-container h2 {
-      color: #d63384; /* Matches heading color */
-    }
-    .links-container ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .links-container ul li {
-      margin: 10px 0;
-    }
-    .links-container ul li a {
-      color: #ff4081; /* Bright pink for links */
-      text-decoration: none;
-    }
-    .links-container ul li a:hover {
-      text-decoration: underline;
-      color: #c2185b; /* Darker pink on hover */
-    }
-    .links-container h1 {
-      color: #d63384; /* Matches heading color */
-      text-align: center; /* Center the headline */
-    }
-   .image-container {
-      margin-top: 40px;
-      padding: 20px;
-      background: #fff0f5; /* Matches other containers */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      color: #d63384; /* Matches heading color */
-      text-align: center; /* Center the headline */
-    }
-    .image-container img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .grid-container-wrapper {
-      margin-top: 40px;
-      padding: 20px;
-      background: #fff0f5; /* Matches other containers */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      color: #d63384; /* Matches heading color */
-      max-width: 800px; /* Set fixed width */
-      margin-left: auto; /* Center horizontally */
-      margin-right: auto; /* Center horizontally */
-    }
-    .grid-container-wrapper h1 {
-      text-align: center;
-      color: #d63384; /* Matches content color */
-      margin-bottom: 20px; /* Space between headline and grid */
-    }
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Two columns */
-      gap: 10px; /* Space between items */
-      background: none; /* Remove any background or border */
-      box-shadow: none; /* Remove the box shadow */
-    }
-
-    .grid-container .grid-item {
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .prompt, .challenge {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #c2185b; /* Deep pink (matches both .prompt and .challenge) */
-    }
-    .challenge {
-      margin-top: 10px;
-      font-style: italic;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #dddddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      position: relative;
-      cursor: pointer;
-      background-color: #d63384; /* Set the header background to pink */
-      color: white;
-    }
-
-    th .arrow {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 12px;
-      opacity: 0.5;
-      transition: opacity 0.2s ease;
-    }
-
-    /* Default arrow (ascending order) */
-    th .arrow.asc::after {
-      content: "↑"; /* Up arrow */
-      opacity: 1;
-    }
-
-    /* Arrow for descending order */
-    th .arrow.desc::after {
-      content: "↓"; /* Down arrow */
-      opacity: 1;
-    }
-
-    th:hover .arrow {
-      opacity: 1;
-    }
-  </style>
+  <title>Terrorluv</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Monatliche Herausforderung</h1>
-    <!-- <button id="generate-btn">Gib mir ein Thema!</button> -->
-    <button id="challenge-btn">Gib mir eine Herausforderung!</button>
-    <p class="prompt" id="prompt-display">Thema: Winterlandschaft.</p>
-    <p class="challenge" id="challenge-display"></p>
-    <!--<button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button> -->
-  </div>
-  <div class="container links-container">
-    <h1>Links zu wichtigen Dokumenten</h1>
-    <ul id="links-list">
-      <li><a href="https://docs.google.com/document/d/1wi9Z90FeoZKTsllJP7k7J8qr4xsTOvaqmvv08UtVZwg/edit?tab=t.0" target="_blank">Gildenstärke (Danke an Mori)</a></li>
-      <li><a href="https://drive.google.com/file/d/1df3aBtCpWeA5c6tdAaS-SU5cuKn0Px1C/view" target="_blank">Werte der SSR Karten (Danke an Elster)</a></li>
-    </ul>
-  </div>
-  <div class="container image-container">
-    <h1>WeWe's Juwelen-Liste</h1>
-    <img src="images/juwelen.png" alt="Juwelen">
-  </div>
-  <div class="grid-container-wrapper">
-    <h1>Mori's Brunnen-Vorhersage</h1>
-    <div class="container grid-container">
-      <div class="grid-item">Freitag, 17. Januar 2025</div>
-      <div class="grid-item">Freitag, 31. Januar 2025</div>
-      <div class="grid-item">Freitag, 14. Februar 2025</div>
-      <div class="grid-item">Freitag, 28. Februar 2025</div>
-      <div class="grid-item">Freitag, 14. März 2025</div>
-      <div class="grid-item">Montag, 31. März 2025</div>
-      <div class="grid-item">Freitag, 18. April 2025</div>
-      <div class="grid-item">Mittwoch, 30. April 2025</div>
-      <div class="grid-item">Freitag, 16. Mai 2025</div>
-      <div class="grid-item">Samstag, 31. Mai 2025</div>
-      <div class="grid-item">Freitag, 20. Juni 2025</div>
-      <div class="grid-item">Montag, 30. Juni 2025</div>
-      <div class="grid-item">Freitag, 17. Juli 2025</div>
-      <div class="grid-item">Donnerstag, 31. Juli 2025</div>
-      <div class="grid-item">Freitag, 15. August 2025</div>
-      <div class="grid-item">Sonntag, 31. August 2025</div>
-      <div class="grid-item">Freitag, 12. September 2025</div>
-      <div class="grid-item">Donnerstag, 30. September 2025</div>
-      <div class="grid-item">Freitag, 17. Oktober 2025</div>
-      <div class="grid-item">Freitag, 31. Oktober 2025</div>
-      <div class="grid-item">Freitag, 14. November 2025</div>
-      <div class="grid-item">Sonntag, 30. November 2025</div>
-      <div class="grid-item">Freitag, 12. Dezember 2025</div>
-      <div class="grid-item">Mittwoch, 31. Dezember 2025</div>
+  <div class="page-container">
+    <div class="content-wrapper">
+    <h1>Terrorluv Sammelsurium</h1>
+    <ul id="toc-list"></ul>
+    <div class="container links-container">
+      <h2 id="links">Links zu wichtigen Dokumenten</h2>
+      <ul id="links-list">
+        <li><a href="https://docs.google.com/document/d/1wi9Z90FeoZKTsllJP7k7J8qr4xsTOvaqmvv08UtVZwg/edit?tab=t.0" target="_blank">Gildenstärke (Danke an Mori)</a></li>
+        <li><a href="https://drive.google.com/file/d/1df3aBtCpWeA5c6tdAaS-SU5cuKn0Px1C/view" target="_blank">Werte der SSR Karten (Danke an Elster)</a></li>
+      </ul>
     </div>
-  </div>
-  <div class="container links-container">
-    <h1>Preis/Leistung des Dia-Shops</h1>
-    Um die Werte in der Tabelle zu sortieren, bitte auf den Tabellenkopf klicken ;) 
-    <div id="table-container" style="margin: 20px; overflow-x: auto;"></div>
-  </div>
+    <div class="container">
+      <h2 id="herauforderung">Monatliche Herausforderung</h2>
+      <!-- <button id="generate-btn">Gib mir ein Thema!</button> -->
+      <button id="challenge-btn">Gib mir eine Herausforderung!</button>
+      <p class="prompt" id="prompt-display">Thema: Winterlandschaft.</p>
+      <p class="challenge" id="challenge-display"></p>
+      <!--<button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button> -->
+    </div>
+    <div class="container image-container">
+      <h2 id="juwelen">WeWe's Juwelen-Liste</h2>
+      <img src="images/juwelen.png" alt="Juwelen">
+    </div>
+    <div class="grid-container-wrapper">
+      <h2 id="brunnen">Mori's Brunnen-Vorhersage</h2>
+      <div class="container grid-container">
+        <div class="grid-item">Freitag, 17. Januar 2025</div>
+        <div class="grid-item">Freitag, 31. Januar 2025</div>
+        <div class="grid-item">Freitag, 14. Februar 2025</div>
+        <div class="grid-item">Freitag, 28. Februar 2025</div>
+        <div class="grid-item">Freitag, 14. März 2025</div>
+        <div class="grid-item">Montag, 31. März 2025</div>
+        <div class="grid-item">Freitag, 18. April 2025</div>
+        <div class="grid-item">Mittwoch, 30. April 2025</div>
+        <div class="grid-item">Freitag, 16. Mai 2025</div>
+        <div class="grid-item">Samstag, 31. Mai 2025</div>
+        <div class="grid-item">Freitag, 20. Juni 2025</div>
+        <div class="grid-item">Montag, 30. Juni 2025</div>
+        <div class="grid-item">Freitag, 17. Juli 2025</div>
+        <div class="grid-item">Donnerstag, 31. Juli 2025</div>
+        <div class="grid-item">Freitag, 15. August 2025</div>
+        <div class="grid-item">Sonntag, 31. August 2025</div>
+        <div class="grid-item">Freitag, 12. September 2025</div>
+        <div class="grid-item">Donnerstag, 30. September 2025</div>
+        <div class="grid-item">Freitag, 17. Oktober 2025</div>
+        <div class="grid-item">Freitag, 31. Oktober 2025</div>
+        <div class="grid-item">Freitag, 14. November 2025</div>
+        <div class="grid-item">Sonntag, 30. November 2025</div>
+        <div class="grid-item">Freitag, 12. Dezember 2025</div>
+        <div class="grid-item">Mittwoch, 31. Dezember 2025</div>
+      </div>
+    </div>
+    <div class="container links-container">
+      <h2 id="dias">Preis/Leistung des Dia-Shops</h2>
+      <div id="table-container" style="margin: 20px; overflow-x: auto;"></div>
+    </div>
+    </div>
+</div>
   <script src="script.js"></script>
 </body>
 </html>

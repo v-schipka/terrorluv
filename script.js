@@ -46,6 +46,25 @@ challengeBtn.addEventListener("click", () => {
   challengeDisplay.textContent = `Deine Herausforderung: ${challenges[randomIndex]}`;
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const tocList = document.getElementById("toc-list");
+
+  // Select all h1 headers on the page
+  const headers = document.querySelectorAll("h2");
+
+  // Generate TOC dynamically based on h1 headers
+  headers.forEach((header, index) => {
+    const tocItem = document.createElement("li");
+    const tocLink = document.createElement("a");
+
+    tocLink.href = `#${header.id}`; // Link to the corresponding h1 header
+    tocLink.textContent = header.textContent; // Use header text as TOC item text
+
+    tocItem.appendChild(tocLink);
+    tocList.appendChild(tocItem);
+  });
+});
+// Google Sheets APi connection
 const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
 const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
 const RANGE = "Dias"; // Adjust based on your sheet's name and range
