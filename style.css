@@ -5,44 +5,50 @@ body {
     padding: 0;
     background-color: #ffe6f2; /* Light pink background */
   }
+  
   /* Page container for everything */
   .page-container {
     display: flex;
-    flex-direction: column; /* Stack TOC on top of the content */
-    align-items: center; /* Center content horizontally */
+    flex-direction: row; /* Align TOC and content horizontally */
+    align-items: flex-start; /* Align TOC and content at the top */
     padding: 20px;
   }
-
-  /* TOC container at the top */
+  
+  /* TOC container on the left */
   .toc-container {
-    width: 100%; /* Full width for the TOC */
-    max-width: 800px; /* Match other container widths */
-    background-color: #fff0f5;
+    flex: 0 0 250px; /* Fixed width for TOC */
+    position: sticky;
+    top: 20px;
     padding: 20px;
+    background-color: #fff0f5;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #d63384;
-    margin-bottom: 20px; /* Add spacing between TOC and content */
+    max-height: 90vh;
+    overflow-y: auto;
+    margin-left: 20px; /* Add spacing between TOC and content */
+    text-align: left; /* Ensure left alignment for TOC content */
   }
-
-  /* Content wrapper below TOC */
+  
+  /* Content wrapper */
   .content-wrapper {
-    max-width: 800px;
-    width: 100%;
+    width: 800px; /* Center content visually within this width */
+    margin: 0 auto auto 135px; /* Center the content-wrapper in the remaining space */
     color: #c2185b;
   }
-  .content-wrapper ul {
+  
+  .toc-container ul {
     list-style-type: none;
     padding: 0;
   }
-  .content-wrapper ul li {
+  .toc-container ul li {
     margin: 10px 0;
   }
-  .content-wrapper ul li a {
+  .toc-container ul li a {
     color: #ff4081; /* Bright pink for links */
     text-decoration: none;
   }
-  .content-wrapper ul li a:hover {
+  .toc-container ul li a:hover {
     text-decoration: underline;
     color: #c2185b; /* Darker pink on hover */
   }
@@ -57,7 +63,6 @@ body {
   }
 
   .container {
-    max-width: 800px;
     margin: 30px auto;
     padding: 20px;
     border-radius: 10px;
@@ -137,7 +142,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #d63384; /* Matches heading color */
-    max-width: 800px; /* Set fixed width */
     margin-left: auto; /* Center horizontally */
     margin-right: auto; /* Center horizontally */
   }
