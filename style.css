@@ -33,12 +33,12 @@ body {
   /* Content wrapper */
   .content-wrapper {
     width: 800px; /* Center content visually within this width */
-    margin: 0 auto auto 135px; /* Center the content-wrapper in the remaining space */
+    margin: 0 auto auto 180px; /* Center the content-wrapper in the remaining space */
     color: #c2185b;
   }
   
-  /* Mobile Styles */
-  @media screen and (max-width: 768px) {
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
     .page-container {
       flex-direction: column; /* Stack TOC and content vertically */
       padding: 10px;
@@ -47,7 +47,7 @@ body {
     .toc-container {
       flex: unset; /* Allow the TOC to resize naturally */
       width: 100%; /* Take full width on mobile */
-      position: fixed; /* Make the TOC disappear when scrolling */
+      position: fixed; /* Make the TOC fixed at the top */
       top: 0; /* Fix TOC at the very top */
       left: 0;
       z-index: 1000; /* Ensure it stays on top */
@@ -62,8 +62,10 @@ body {
       width: 100%; /* Make the content responsive */
       margin: 20px auto 0 auto; /* Add spacing after TOC */
       padding: 0 10px; /* Add padding for better readability */
+      padding-top: 80px; /* Offset for the fixed TOC, adjust this value as needed */
     }
   }
+  
   
   .toc-container ul {
     list-style-type: none;
