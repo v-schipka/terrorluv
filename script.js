@@ -67,7 +67,7 @@ async function loadSheetData() {
 
     // Add column headers
     headers.forEach((header, index) => {
-      tableHTML += `<th onclick="sortTable(${index})">${header} <span class="arrow"></span></th>`;
+      tableHTML += `<th onclick="sortTable(${index})">${header} <span class="arrow asc"></span></th>`;
     });
     tableHTML += "</tr></thead><tbody>";
 
