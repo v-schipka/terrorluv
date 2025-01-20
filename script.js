@@ -14,12 +14,14 @@ const prompts = [
     "Bunt(stift)"
   ];
 
+ 
   // Get elements
 const generateBtn = document.getElementById("generate-btn");
 const resetBtn = document.getElementById("reset-btn");
 const challengeBtn = document.getElementById("challenge-btn");
 const promptDisplay = document.getElementById("prompt-display");
 const challengeDisplay = document.getElementById("challenge-display");
+const tableContainer = document.getElementById("table-container");
 
 // Event listener for the "Get a Prompt" button
 //generateBtn.addEventListener("click", () => {
@@ -43,3 +45,50 @@ challengeBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * challenges.length);
   challengeDisplay.textContent = `Deine Herausforderung: ${challenges[randomIndex]}`;
 });
+
+const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
+const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
+const RANGE = "Dias"; // Adjust based on your sheet's name and range
+
+// Fetch and display Google Sheets data
+async function loadSheetData() {
+  const sheetURL = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+  
+  try {
+    const response = await fetch(sheetURL);
+    if (!response.ok) throw new Error("Network response was not ok");
+    const data = await response.json();
+
+    // Parse rows and columns
+    const [headers, ...rows] = data.values;
+
+    // Build HTML table
+    let tableHTML = "<table><thead><tr>";
+
+    // Add column headers
+    headers.forEach((header) => {
+      tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += "</tr></thead><tbody>";
+
+    // Add rows
+    rows.forEach((row) => {
+      tableHTML += "<tr>";
+      row.forEach((cell) => {
+        tableHTML += `<td>${cell}</td>`;
+      });
+      tableHTML += "</tr>";
+    });
+
+    tableHTML += "</tbody></table>";
+
+    // Add table to the container
+    document.getElementById("table-container").innerHTML = tableHTML;
+  } catch (error) {
+    console.error("Error loading sheet data:", error);
+    document.getElementById("table-container").innerHTML = "<p>Error loading data. Please try again later.</p>";
+  }
+}
+
+// Call the function to load data
+loadSheetData();

@@ -13,7 +13,7 @@
       background-color: #ffe6f2; /* Light pink background */
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: 30px auto;
       padding: 20px;
       border-radius: 10px;
@@ -93,6 +93,18 @@
       margin-top: 10px;
       font-style: italic;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
   </style>
 </head>
 <body>
@@ -105,7 +117,7 @@
     <!--<button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button> -->
   </div>
   <div class="container links-container">
-    <h1>Links zu wichtigen Dokumenten</h2>
+    <h1>Links zu wichtigen Dokumenten</h1>
     <ul id="links-list">
       <li><a href="https://docs.google.com/document/d/1wi9Z90FeoZKTsllJP7k7J8qr4xsTOvaqmvv08UtVZwg/edit?tab=t.0" target="_blank">Gildenstärke (Danke an Mori)</a></li>
       <li><a href="https://drive.google.com/file/d/1df3aBtCpWeA5c6tdAaS-SU5cuKn0Px1C/view" target="_blank">Werte der SSR Karten (Danke an Elster)</a></li>
@@ -141,6 +153,10 @@
     Sonntag, 30. November 2025<br>
     Freitag, 12. Dezember 2025<br>
     Mittwoch, 31. Dezember 2025<br>
+  </div>
+  <div class="container links-container">
+    <h1>Preis/Leistung des Dia-Shops</h1>
+    <div id="table-container" style="margin: 20px; overflow-x: auto;"></div>
   </div>
   <script src="script.js"></script>
 </body>
