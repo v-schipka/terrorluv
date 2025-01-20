@@ -9,12 +9,12 @@ body {
   /* Page container for everything */
   .page-container {
     display: flex;
-    flex-direction: row; /* Align TOC and content horizontally */
+    flex-direction: row; /* Align TOC and content horizontally by default */
     align-items: flex-start; /* Align TOC and content at the top */
     padding: 20px;
   }
   
-  /* TOC container on the left */
+  /* TOC container on the left (default behavior for larger screens) */
   .toc-container {
     flex: 0 0 250px; /* Fixed width for TOC */
     position: sticky;
@@ -35,6 +35,34 @@ body {
     width: 800px; /* Center content visually within this width */
     margin: 0 auto auto 135px; /* Center the content-wrapper in the remaining space */
     color: #c2185b;
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .page-container {
+      flex-direction: column; /* Stack TOC and content vertically */
+      padding: 10px;
+    }
+  
+    .toc-container {
+      flex: unset; /* Allow the TOC to resize naturally */
+      width: 100%; /* Take full width on mobile */
+      position: fixed; /* Make the TOC disappear when scrolling */
+      top: 0; /* Fix TOC at the very top */
+      left: 0;
+      z-index: 1000; /* Ensure it stays on top */
+      margin: 0; /* Remove margin */
+      padding: 10px 20px; /* Adjust padding */
+      box-shadow: none; /* Remove the box shadow */
+      background-color: #fff0f5;
+      text-align: center; /* Center-align the TOC text on mobile */
+    }
+  
+    .content-wrapper {
+      width: 100%; /* Make the content responsive */
+      margin: 20px auto 0 auto; /* Add spacing after TOC */
+      padding: 0 10px; /* Add padding for better readability */
+    }
   }
   
   .toc-container ul {
