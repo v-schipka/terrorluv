@@ -63,11 +63,11 @@ async function loadSheetData() {
     const [headers, ...rows] = data.values;
 
     // Build HTML table
-    let tableHTML = "<table><thead><tr>";
+    let tableHTML = "<table id='data-table'><thead><tr>";
 
     // Add column headers
-    headers.forEach((header) => {
-      tableHTML += `<th>${header}</th>`;
+    headers.forEach((header, index) => {
+      tableHTML += `<th onclick="sortTable(${index})">${header} <span class="arrow"></span></th>`;
     });
     tableHTML += "</tr></thead><tbody>";
 
@@ -88,6 +88,53 @@ async function loadSheetData() {
     console.error("Error loading sheet data:", error);
     document.getElementById("table-container").innerHTML = "<p>Error loading data. Please try again later.</p>";
   }
+}
+
+// Function to sort the table by a column
+let sortOrder = {}; // Keeps track of the sort order for each column
+
+function sortTable(columnIndex) {
+  const table = document.getElementById("data-table");
+  const rows = Array.from(table.rows).slice(1); // Get all rows excluding header
+  const isNumericColumn = !isNaN(rows[0].cells[columnIndex].innerText);
+
+  // Toggle the sort order for the column
+  const currentOrder = sortOrder[columnIndex] || 'asc'; // Default to ascending order
+  const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+  sortOrder[columnIndex] = newOrder;
+
+  // Sort rows based on the column index and type (numeric or text)
+  rows.sort((a, b) => {
+    const cellA = a.cells[columnIndex].innerText;
+    const cellB = b.cells[columnIndex].innerText;
+
+    if (isNumericColumn) {
+      return newOrder === 'asc' ? parseFloat(cellA) - parseFloat(cellB) : parseFloat(cellB) - parseFloat(cellA); // Toggle between ascending and descending
+    } else {
+      return newOrder === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA); // Toggle between ascending and descending for text
+    }
+  });
+
+  // Reattach sorted rows to the table
+  rows.forEach(row => table.appendChild(row));
+
+  // Update the header arrow direction
+  updateHeaderArrow(columnIndex, newOrder);
+}
+
+// Function to update the arrow direction in the header
+function updateHeaderArrow(columnIndex, order) {
+  const headers = document.querySelectorAll("#data-table th");
+  
+  // Reset all arrows
+  headers.forEach(header => {
+    header.querySelector(".arrow").classList.remove("asc", "desc");
+  });
+
+  // Update the arrow for the sorted column
+  const header = headers[columnIndex];
+  const arrow = header.querySelector(".arrow");
+  arrow.classList.add(order); // Add the correct class (asc or desc)
 }
 
 // Call the function to load data

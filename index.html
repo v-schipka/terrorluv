@@ -105,6 +105,34 @@
     th {
       background-color: #f2f2f2;
     }
+    th {
+  position: relative;
+  cursor: pointer;
+}
+
+th .arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+th .arrow.asc::after {
+  content: "↑"; /* Up arrow */
+  opacity: 1;
+}
+
+th .arrow.desc::after {
+  content: "↓"; /* Down arrow */
+  opacity: 1;
+}
+
+th:hover .arrow {
+  opacity: 1;
+}
   </style>
 </head>
 <body>
