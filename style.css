@@ -33,7 +33,7 @@ body {
   /* Content wrapper */
   .content-wrapper {
     width: 800px; /* Center content visually within this width */
-    margin: 0 auto auto 180px; /* Center the content-wrapper in the remaining space */
+    margin: 0 auto; /* Center the content-wrapper in the remaining space */
     color: #c2185b;
   }
   
