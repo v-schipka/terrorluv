@@ -74,6 +74,12 @@ promptRef.on("value", (snapshot) => {
   }
 });
 
+// Check localStorage for a saved challenge
+const savedChallenge = localStorage.getItem("currentChallenge");
+if (savedChallenge) {
+  challengeDisplay.textContent = `Deine Herausforderung: ${savedChallenge}`;
+}
+
 // Event listener for "Get A Prompt" button
 generateBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * prompts.length);
@@ -92,6 +98,7 @@ challengeBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * challenges.length);
   const selectedChallenge = challenges[randomIndex];
   challengeDisplay.textContent = `Deine Herausforderung: ${selectedChallenge}`;
+  localStorage.setItem("currentChallenge", selectedChallenge); // Save the challenge to localStorage
 });
 
 //---------------------------------------------------
