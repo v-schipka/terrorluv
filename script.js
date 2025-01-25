@@ -14,7 +14,22 @@ const prompts = [
     "Bunt(stift)"
   ];
 
- 
+ // Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDNSlPCgxiA7l95236N6blyIUjcpx9rsnM",
+  authDomain: "terrorluv-15727.firebaseapp.com",
+  databaseURL: "https://terrorluv-15727-default-rtdb.firebaseio.com",
+  projectId: "terrorluv-15727",
+  storageBucket: "terrorluv-15727.firebasestorage.app",
+  messagingSenderId: "252619984030",
+  appId: "1:252619984030:web:dfd02eede70cfada68bf8f"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const promptRef = db.ref("currentPrompt");
+
   // Get elements
 const generateBtn = document.getElementById("generate-btn");
 const resetBtn = document.getElementById("reset-btn");
@@ -23,29 +38,9 @@ const promptDisplay = document.getElementById("prompt-display");
 const challengeDisplay = document.getElementById("challenge-display");
 const tableContainer = document.getElementById("table-container");
 
-// Event listener for the "Get a Prompt" button
-//generateBtn.addEventListener("click", () => {
- // const randomIndex = Math.floor(Math.random() * prompts.length);
- // const selectedPrompt = prompts[randomIndex];
- // promptDisplay.textContent = `Thema: ${prompts[randomIndex]}`;
- // generateBtn.disabled = true; // Disable the button
-//});
+//-----------------------------------------------------
 
-// Event listener for the "Reset" button
-//resetBtn.addEventListener("click", () => {
-//  promptDisplay.textContent = "Erhalte ein zufälliges Thema!";
-//  localStorage.removeItem("currentPrompt"); // Clear the saved prompt
-//  generateBtn.disabled = false; // Re-enable the "Get a Prompt" button
-//  challengeDisplay.textContent = ""; // Optionally clear the challenge
-//});
-
-
-// Event listener for the "Get a Challenge" button
-challengeBtn.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * challenges.length);
-  challengeDisplay.textContent = `Deine Herausforderung: ${challenges[randomIndex]}`;
-});
-
+// TOC
 document.addEventListener("DOMContentLoaded", function () {
   const tocList = document.getElementById("toc-list");
 
@@ -64,7 +59,44 @@ document.addEventListener("DOMContentLoaded", function () {
     tocList.appendChild(tocItem);
   });
 });
-// Google Sheets APi connection
+
+//--------------------------------------------------------
+
+// Display the current prompt from Firebase
+promptRef.on("value", (snapshot) => {
+  const prompt = snapshot.val();
+  if (prompt) {
+    promptDisplay.textContent = "Unser Thema: " + prompt;
+    generateBtn.disabled = true;
+  } else {
+    promptDisplay.textContent = "";
+    generateBtn.disabled = false;
+  }
+});
+
+// Event listener for "Get A Prompt" button
+generateBtn.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * prompts.length);
+  const selectedPrompt = prompts[randomIndex];
+  promptRef.set(selectedPrompt); // Save the prompt to Firebase
+});
+
+// Event listener for "Reset" button
+resetBtn.addEventListener("click", () => {
+  promptRef.remove(); // Clear the prompt from Firebase
+  challengeDisplay.textContent = ""; // Optionally clear the challenge
+});
+
+// Event listener for "Get A Challenge" button
+challengeBtn.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * challenges.length);
+  const selectedChallenge = challenges[randomIndex];
+  challengeDisplay.textContent = `Deine Herausforderung: ${selectedChallenge}`;
+});
+
+//---------------------------------------------------
+
+// Google Sheets API connection
 const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
 const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
 const RANGE = "Dias"; // Adjust based on your sheet's name and range

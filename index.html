@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terrorluv</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
@@ -25,11 +27,11 @@
     </div>
     <div class="container">
       <h2 id="herauforderung">Monatliche Herausforderung</h2>
-      <!-- <button id="generate-btn">Gib mir ein Thema!</button> -->
+      <button id="generate-btn">Gib uns ein Thema!</button>
       <button id="challenge-btn">Gib mir eine Herausforderung!</button>
-      <p class="prompt" id="prompt-display">Thema: Winterlandschaft.</p>
+      <p class="prompt" id="prompt-display"></p>
       <p class="challenge" id="challenge-display"></p>
-      <!--<button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button> -->
+      <button id="reset-btn">Zurücksetzen: Neuer Monat, Neues Glück</button> 
     </div>
     <div class="container image-container">
       <h2 id="juwelen">WeWe's Juwelen-Liste</h2>
@@ -38,7 +40,7 @@
     <div class="grid-container-wrapper">
       <h2 id="brunnen">Mori's Brunnen-Vorhersage</h2>
       <div class="container grid-container">
-        <div class="grid-item">Freitag, 17. Januar 2025</div>
+        <div class="grid-item"><s>Freitag, 17. Januar 2025</s></div>
         <div class="grid-item">Freitag, 31. Januar 2025</div>
         <div class="grid-item">Freitag, 14. Februar 2025</div>
         <div class="grid-item">Freitag, 28. Februar 2025</div>
