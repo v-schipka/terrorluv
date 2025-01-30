@@ -36,7 +36,6 @@ const resetBtn = document.getElementById("reset-btn");
 const challengeBtn = document.getElementById("challenge-btn");
 const promptDisplay = document.getElementById("prompt-display");
 const challengeDisplay = document.getElementById("challenge-display");
-const tableContainer = document.getElementById("table-container");
 
 //-----------------------------------------------------
 
@@ -106,12 +105,12 @@ challengeBtn.addEventListener("click", () => {
 // Google Sheets API connection
 const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
 const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
-const RANGE = "Dias"; // Adjust based on your sheet's name and range
 
 // Fetch and display Google Sheets data
-async function loadSheetData() {
-  const sheetURL = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
-  
+// Fetch and display Google Sheets data
+async function loadSheetData(range, tableContainerId) {
+  const sheetURL = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}?key=${API_KEY}`;
+
   try {
     const response = await fetch(sheetURL);
     if (!response.ok) throw new Error("Network response was not ok");
@@ -121,11 +120,11 @@ async function loadSheetData() {
     const [headers, ...rows] = data.values;
 
     // Build HTML table
-    let tableHTML = "<table id='data-table'><thead><tr>";
+    let tableHTML = "<table class='data-table'><thead><tr>";
 
     // Add column headers
     headers.forEach((header, index) => {
-      tableHTML += `<th onclick="sortTable(${index})">${header} <span class="arrow asc"></span></th>`;
+      tableHTML += `<th onclick="sortTable('${tableContainerId}', ${index})">${header} <span class="arrow asc"></span></th>`;
     });
     tableHTML += "</tr></thead><tbody>";
 
@@ -140,26 +139,29 @@ async function loadSheetData() {
 
     tableHTML += "</tbody></table>";
 
-    // Add table to the container
-    document.getElementById("table-container").innerHTML = tableHTML;
+    // Add table to the specified container
+    document.getElementById(tableContainerId).innerHTML = tableHTML;
   } catch (error) {
     console.error("Error loading sheet data:", error);
-    document.getElementById("table-container").innerHTML = "<p>Error loading data. Please try again later.</p>";
+    document.getElementById(tableContainerId).innerHTML = "<p>Error loading data. Please try again later.</p>";
   }
 }
 
 // Function to sort the table by a column
 let sortOrder = {}; // Keeps track of the sort order for each column
 
-function sortTable(columnIndex) {
-  const table = document.getElementById("data-table");
+function sortTable(tableContainerId, columnIndex) {
+  const table = document.querySelector(`#${tableContainerId} .data-table`);
+  if (!table) return;
+
   const rows = Array.from(table.rows).slice(1); // Get all rows excluding header
   const isNumericColumn = !isNaN(rows[0].cells[columnIndex].innerText);
 
   // Toggle the sort order for the column
-  const currentOrder = sortOrder[columnIndex] || 'asc'; // Default to ascending order
+  const key = `${tableContainerId}-${columnIndex}`;
+  const currentOrder = sortOrder[key] || 'asc'; // Default to ascending order
   const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
-  sortOrder[columnIndex] = newOrder;
+  sortOrder[key] = newOrder;
 
   // Sort rows based on the column index and type (numeric or text)
   rows.sort((a, b) => {
@@ -167,9 +169,9 @@ function sortTable(columnIndex) {
     const cellB = b.cells[columnIndex].innerText;
 
     if (isNumericColumn) {
-      return newOrder === 'asc' ? parseFloat(cellA) - parseFloat(cellB) : parseFloat(cellB) - parseFloat(cellA); // Toggle between ascending and descending
+      return newOrder === 'asc' ? parseFloat(cellA) - parseFloat(cellB) : parseFloat(cellB) - parseFloat(cellA);
     } else {
-      return newOrder === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA); // Toggle between ascending and descending for text
+      return newOrder === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
     }
   });
 
@@ -177,12 +179,12 @@ function sortTable(columnIndex) {
   rows.forEach(row => table.appendChild(row));
 
   // Update the header arrow direction
-  updateHeaderArrow(columnIndex, newOrder);
+  updateHeaderArrow(tableContainerId, columnIndex, newOrder);
 }
 
 // Function to update the arrow direction in the header
-function updateHeaderArrow(columnIndex, order) {
-  const headers = document.querySelectorAll("#data-table th");
+function updateHeaderArrow(tableContainerId, columnIndex, order) {
+  const headers = document.querySelectorAll(`#${tableContainerId} .data-table th`);
   
   // Reset all arrows
   headers.forEach(header => {
@@ -195,5 +197,6 @@ function updateHeaderArrow(columnIndex, order) {
   arrow.classList.add(order); // Add the correct class (asc or desc)
 }
 
-// Call the function to load data
-loadSheetData();
+// Load both sheets
+loadSheetData("dias", "table-container");
+loadSheetData("apples", "table-container-apples");
