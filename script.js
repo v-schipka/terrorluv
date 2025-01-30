@@ -200,3 +200,19 @@ function updateHeaderArrow(tableContainerId, columnIndex, order) {
 // Load both sheets
 loadSheetData("dias", "table-container");
 loadSheetData("apples", "table-container-apples");
+
+//----------------------------------------------------
+
+//Dynamic scroll padding for mobile
+function updateScrollPadding() {
+  const toc = document.querySelector('.toc-container');
+  if (toc && window.innerWidth <= 768) { 
+    document.documentElement.style.scrollPaddingTop = `${toc.offsetHeight + 30}px`; // Add extra space
+  } else {
+    document.documentElement.style.scrollPaddingTop = "2em"; // Default for larger screens
+  }
+}
+
+// Run on load and when resizing
+window.addEventListener('load', updateScrollPadding);
+window.addEventListener('resize', updateScrollPadding);
