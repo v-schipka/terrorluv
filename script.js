@@ -200,6 +200,7 @@ function updateHeaderArrow(tableContainerId, columnIndex, order) {
 // Load both sheets
 loadSheetData("dias", "table-container");
 loadSheetData("apples", "table-container-apples");
+loadSheetData("juwelen", "table-container-juwelen");
 
 //----------------------------------------------------
 
