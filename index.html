@@ -25,6 +25,27 @@
         <li><a href="https://docs.google.com/document/d/1D1xLKf5k3frzplmc-OzoTGBK_OnukqNn/view" target="_blank">Übersicht der Edelsteine, Effekte und Fähigkeiten (Danke an WeWe)</a></li>
       </ul>
     </div>
+    <div class="container links-container">
+      <h2 id="rechner">Iwa's Kampf-Rechner</h2>
+      <form id="valuesForm">
+        <label for="angriffskraft">Angriffskraft (max 80.000.000):</label>
+        <input type="number" id="angriffskraft" name="angriffskraft" max="80000000" required>
+        <br><br>
+        <label for="ko">KOs (max 1000):</label>
+        <input type="number" id="ko" name="ko" max="1000" required>
+        <br><br>
+        <label for="element">Element (macht noch nichts):</label>
+        <select id="element" name="element" required>
+            <option value="Pflanze">Pflanze</option>
+            <option value="Wasser">Wasser</option>
+            <option value="Feuer">Feuer</option>
+        </select>
+        <br><br>
+        <button type="submit">Berechnen</button>
+      </form>
+      <p class="prompt" id="fight-result"></p>
+      <p class="prompt" id="fight-result-ele-plus"></p>
+    </div>
     <div class="container">
       <h2 id="herauforderung">Monatliche Herausforderung</h2>
       <button id="generate-btn">Gib uns ein Thema!</button>
@@ -53,7 +74,7 @@
       <h2 id="brunnen">Mori's Brunnen-Vorhersage</h2>
       <div class="container grid-container">
         <div class="grid-item"><s>Freitag, 17. Januar 2025</s></div>
-        <div class="grid-item">Freitag, 31. Januar 2025</div>
+        <div class="grid-item"><s>Freitag, 31. Januar 2025</s></div>
         <div class="grid-item">Freitag, 14. Februar 2025</div>
         <div class="grid-item">Freitag, 28. Februar 2025</div>
         <div class="grid-item">Freitag, 14. März 2025</div>

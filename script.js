@@ -102,6 +102,44 @@ challengeBtn.addEventListener("click", () => {
 
 //---------------------------------------------------
 
+// Rechner
+document.getElementById('valuesForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get input values
+  const angriffskraft = parseFloat(document.getElementById('angriffskraft').value) || 0;
+  const ko = parseFloat(document.getElementById('ko').value) || 0;
+
+  // Perform calculation: Angriffskraft * (1 - (KOs / 1000))
+  const result = angriffskraft * (1 - (ko / 1000));
+  // Calculate fight-result-ele-plus
+  let multiplierPlus = 1;
+  if (ko < 50) {
+      multiplierPlus = 1;
+  } else if (ko >= 50 && ko < 100) {
+      multiplierPlus = 0.9;
+  } else if (ko >= 100 && ko < 200) {
+      multiplierPlus = 0.75;
+  } else if (ko >= 200 && ko < 250) {
+      multiplierPlus = 0.65;
+  } else if (ko >= 250 && ko < 400) {
+      multiplierPlus = 0.5;
+  } else if (ko > 400) {
+      multiplierPlus = 0.25;
+  }
+  const resultElePlus = result * multiplierPlus;
+
+  // Format numbers in German style
+  const formatNumber = (num) => new Intl.NumberFormat('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(num);
+
+  // Display results in the respective <p> elements
+  document.getElementById('fight-result').textContent = `Ohne Elemente: ${formatNumber(result)}`;
+  document.getElementById('fight-result-ele-plus').textContent = `Mit Element-Vorteil: ${formatNumber(resultElePlus)}`;
+});
+
+//-------------------------------------------------------
+
+
 // Google Sheets API connection
 const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
 const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
