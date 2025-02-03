@@ -239,6 +239,7 @@ function updateHeaderArrow(tableContainerId, columnIndex, order) {
 loadSheetData("dias", "table-container");
 loadSheetData("apples", "table-container-apples");
 loadSheetData("juwelen", "table-container-juwelen");
+loadSheetData("truppen", "table-container-truppen");
 
 //----------------------------------------------------
 
