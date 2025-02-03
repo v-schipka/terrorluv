@@ -29,25 +29,26 @@
       <h2 id="rechner">Iwa's Kampf-Rechner</h2>
       <form id="valuesForm">
         <label for="angriffskraft">Angriffskraft:</label>
-        <input type="number" id="angriffskraft" name="angriffskraft" max="80000000" required>
+        <input type="number" id="angriffskraft" name="angriffskraft" max="80000000" step="any" required>
         <br><br>
         <label for="ko">Knock-Outs:</label>
         <input type="number" id="ko" name="ko" max="1000" required>
-        <br><br>
+        <!--<br><br>
         <label for="element">Element (macht noch nichts):</label>
         <select id="element" name="element" required>
             <option value="Pflanze">Pflanze</option>
             <option value="Wasser">Wasser</option>
             <option value="Feuer">Feuer</option>
-        </select>
+        </select> -->
         <br><br>
         <button type="submit">Berechnen</button>
       </form>
       <p class="prompt" id="fight-result"></p>
       <p class="prompt" id="fight-result-ele-plus"></p>
+      <div id="filtered-table-container"></div>
     </div>
     <div class="container links-container">
-      <h2 id="juwelen">Truppenstärke</h2>
+      <h2 id="truppen">Gildenstärke</h2>
       <div id="table-container-truppen" style="margin: 20px; overflow-x: auto;"></div>
     </div>
     <div class="container">
