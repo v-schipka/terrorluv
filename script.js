@@ -1,13 +1,20 @@
 const prompts = [
-    "Nacht",
-    "Winterlandschaft",
-    "Kälte",
-    "Gute Vorsätze",
-    "Erste Blumen im Schnee",
-    "Gemütlichkeit",
-    "Selbstfindung"
+    "Karneval",
+    "erste Blumen im Schnee",
+    "Valentinstag",
+    "Jules Verne",
+    "Erich Kästner",
+    "Kawaii",
+    "Pokemon",
+    "Sonnenuntergang",
+    "Der Winter verschwindet",
+    "Fastenzeit",
+    "Natur im Februar",
+    "Sternzeichen Fische/Wassermann",
+    "Wintersport/Urlaub in den Bergen",
+    "Apres-Ski"
   ];
-
+  
   const challenges = [
     "schwarz/weiß",
     "Bleistift",
