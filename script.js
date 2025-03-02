@@ -63,27 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //--------------------------------------------------------
-
-// Display the current prompt from Firebase
+// Display the current prompts from Firebase
 promptRef.on("value", (snapshot) => {
-  const prompts = snapshot.val();
+  const promptsData = snapshot.val();
 
-  if (prompts && Array.isArray(prompts) && prompts.length >= 2) {
-    // Pick two different random indices
-    let index1 = Math.floor(Math.random() * prompts.length);
-    let index2;
-    do {
-      index2 = Math.floor(Math.random() * prompts.length);
-    } while (index2 === index1); // Ensure they are different
-
-    promptDisplay.textContent = "Thema #1: " + prompts[index1];
-    promptDisplay2.textContent = "Thema #2: " + prompts[index2];
-
-    generateBtn.disabled = true;
+  if (promptsData && promptsData.prompt1 && promptsData.prompt2) {
+      promptDisplay.textContent = "Thema #1: " + promptsData.prompt1;
+      promptDisplay2.textContent = "Thema #2: " + promptsData.prompt2;
+      generateBtn.disabled = true;
   } else {
-    promptDisplay.textContent = "";
-    promptDisplay2.textContent = "";
-    generateBtn.disabled = false;
+      promptDisplay.textContent = "";
+      promptDisplay2.textContent = "";
+      generateBtn.disabled = false;
   }
 });
 
@@ -95,21 +86,41 @@ if (savedChallenge) {
 
 // Event listener for "Get A Prompt" button
 generateBtn.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * prompts.length);
-  const selectedPrompt = prompts[randomIndex];
-  promptRef.set(selectedPrompt); // Save the prompt to Firebase
+  if (prompts.length < 2) {
+      alert("Not enough prompts to select two different ones!");
+      return;
+  }
+
+  let index1 = Math.floor(Math.random() * prompts.length);
+  let index2;
+  do {
+      index2 = Math.floor(Math.random() * prompts.length);
+  } while (index1 === index2); // Ensure different prompts
+
+  const selectedPrompt1 = prompts[index1];
+  const selectedPrompt2 = prompts[index2];
+
+  // Save both prompts to Firebase
+  promptRef.set({
+      prompt1: selectedPrompt1,
+      prompt2: selectedPrompt2
+  });
 });
 
 // Event listener for "Reset" button
 resetBtn.addEventListener("click", () => {
-  promptRef.remove(); // Clear the prompt from Firebase
-  challengeDisplay.textContent = ""; // Optionally clear the challenge
+  promptRef.remove(); // Clear the prompts from Firebase
+  promptDisplay.textContent = "";
+  promptDisplay2.textContent = "";
+  challengeDisplay.textContent = "";
+  generateBtn.disabled = false;
 });
 
 // Event listener for "Get A Challenge" button
 challengeBtn.addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * challenges.length);
   const selectedChallenge = challenges[randomIndex];
+
   challengeDisplay.textContent = `Deine Herausforderung: ${selectedChallenge}`;
   localStorage.setItem("currentChallenge", selectedChallenge); // Save the challenge to localStorage
 });
