@@ -1,18 +1,13 @@
 const prompts = [
-    "Karneval",
-    "erste Blumen im Schnee",
-    "Valentinstag",
-    "Jules Verne",
-    "Erich Kästner",
-    "Kawaii",
-    "Pokemon",
-    "Sonnenuntergang",
-    "Der Winter verschwindet",
-    "Fastenzeit",
-    "Natur im Februar",
-    "Sternzeichen Fische/Wassermann",
-    "Wintersport/Urlaub in den Bergen",
-    "Apres-Ski"
+    "Girlpower",
+    "Frühlingserwachen",
+    "Janosch",
+    "Frühblüher",
+    "Vogelkonzert",
+    "Hotarubi",
+    "Mortkranken",
+    "Disney",
+    "One Piece"
   ];
   
   const challenges = [
@@ -42,6 +37,7 @@ const generateBtn = document.getElementById("generate-btn");
 const resetBtn = document.getElementById("reset-btn");
 const challengeBtn = document.getElementById("challenge-btn");
 const promptDisplay = document.getElementById("prompt-display");
+const promptDisplay2 = document.getElementById("prompt-display2");
 const challengeDisplay = document.getElementById("challenge-display");
 
 //-----------------------------------------------------
@@ -70,12 +66,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Display the current prompt from Firebase
 promptRef.on("value", (snapshot) => {
-  const prompt = snapshot.val();
-  if (prompt) {
-    promptDisplay.textContent = "Unser Thema: " + prompt;
+  const prompts = snapshot.val();
+
+  if (prompts && Array.isArray(prompts) && prompts.length >= 2) {
+    // Pick two different random indices
+    let index1 = Math.floor(Math.random() * prompts.length);
+    let index2;
+    do {
+      index2 = Math.floor(Math.random() * prompts.length);
+    } while (index2 === index1); // Ensure they are different
+
+    promptDisplay.textContent = "Thema #1: " + prompts[index1];
+    promptDisplay2.textContent = "Thema #2: " + prompts[index2];
+
     generateBtn.disabled = true;
   } else {
     promptDisplay.textContent = "";
+    promptDisplay2.textContent = "";
     generateBtn.disabled = false;
   }
 });
