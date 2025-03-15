@@ -19,6 +19,11 @@
   button:hover {
     background-color: #ec417a; /* Slightly darker pink on hover */
   }
+  table {
+    width: 95%;
+    border-collapse: collapse;
+    overflow-x: auto;
+  }
   th, td {
     border: 1px solid #dddddd;
     padding: 8px;
