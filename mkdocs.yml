@@ -8,6 +8,7 @@ theme:
     - navigation.tracking
     #- navigation.instant
     #- navigation.instant.progress
+    - navigation.top
     - navigation.indexes
     - navigation.expand
     - navigation.sections
