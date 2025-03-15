@@ -1,0 +1,60 @@
+ 
+  h1, h2 {
+    color: #E92063; /* Vivid pink for headings */
+  }
+  button {
+    background-color: #e92063; /* Medium pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+  }
+  button:disabled {
+    background-color:rgb(137, 122, 128); /* Lighter pink for disabled state */
+    cursor: not-allowed;
+  }
+  button:hover {
+    background-color: #ec417a; /* Slightly darker pink on hover */
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    position: relative;
+    cursor: pointer;
+    background-color: #E92063; /* Set the header background to pink */
+    color: white;
+  }
+  input[type=number] {
+    width: 80%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
+  
+  input[type=number]:focus {
+    border: 3px solid #555;
+  }
+  .results-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  u {
+    text-underline-offset: 5px;
+  }
+  
