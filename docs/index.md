@@ -44,7 +44,7 @@ Vorhersagen ohne Gewähr :wink:
 :material-shovel: - Mr. Mo's Goldminen Bonus<br>
 :material-diamond-stone: - Ausgabemission
 
-| Datum | Brunnen | Goldmine| Ausgabebonus |
+| Datum | Brunnen | Goldmine| Bonus |
 |---------|---------|---------|---------|
 | <s>Freitag, 17. Januar 2025</s> | :material-water-well: | :material-shovel: | |
 | <s>Freitag, 31. Januar 2025</s> | :material-water-well: |  | :material-diamond-stone: |
