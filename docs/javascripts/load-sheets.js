@@ -28,7 +28,6 @@ function displayTable(data, container) {
     return;
   }
 
-  // Get numeric and ignored column indexes safely
   const numericColumns = container.dataset.sortNumeric 
     ? container.dataset.sortNumeric.split(",").map(Number) 
     : [];
@@ -48,7 +47,6 @@ function displayTable(data, container) {
       const th = document.createElement("th");
       th.textContent = header;
 
-      // Add the required sorting attribute
       if (numericColumns.includes(index)) {
         th.setAttribute("data-sort-method", "number");
       }
@@ -78,18 +76,19 @@ function displayTable(data, container) {
 
   table.appendChild(tbody);
 
-  //const wrapper = document.createElement("div");
-  //wrapper.classList.add("md-table");
- // wrapper.appendChild(table);
+  // Create a scrollable wrapper for the table
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("table-container");
+  wrapper.appendChild(table);
 
   container.innerHTML = "";
-  container.appendChild(table);
+  container.appendChild(wrapper);
 
-  // Reinitialize Tablesort to recognize new table
   if (typeof Tablesort !== "undefined") {
     new Tablesort(table);
   }
 }
+
 
 //-----------------
 
