@@ -19,9 +19,7 @@ theme:
   custom_dir: overrides 
     
 plugins:
-  - privacy:
-      links_attr_map:
-        target: _blank
+  - search
 
 extra_javascript:
   - javascripts/extra.js
