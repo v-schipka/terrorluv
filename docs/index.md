@@ -97,15 +97,13 @@ Am Ende des Monats werden die fertigen Bilder im *#zeichnen-challenge-bilder* Ka
 
 <script>
 const prompts = [
-  "Girlpower",
-  "Frühlingserwachen",
-  "Janosch",
-  "Frühblüher",
-  "Vogelkonzert",
-  "Hotarubi",
-  "Mortkranken",
-  "Disney",
-  "One Piece"
+  "Ostern",
+  "Qualle",
+  "Unterwasserwelt",
+  "Hans Christian Andersen",
+  "Albert Uderzo",
+  "Wilhelm Busch",
+  "Terry Pratchett"
 ];
 
 const challenges = [
