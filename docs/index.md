@@ -103,7 +103,8 @@ const prompts = [
   "Hans Christian Andersen",
   "Albert Uderzo",
   "Wilhelm Busch",
-  "Terry Pratchett"
+  "Terry Pratchett",
+  "Aprilscherze"
 ];
 
 const challenges = [
