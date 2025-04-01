@@ -19,6 +19,8 @@ Willkommen im Archiv für Dokumente, diverse Informationen und mehr. :smile:
 - orv
 - suncats
 
+<hr>
+
 ### :material-food-apple: Äpfel
 
 Anzahl bunter Äpfel zum Aufleveln:
