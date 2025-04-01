@@ -104,7 +104,10 @@ const prompts = [
   "Albert Uderzo",
   "Wilhelm Busch",
   "Terry Pratchett",
-  "Aprilscherze"
+  "Aprilscherze",
+  "Kirschblüten",
+  "Küken",
+  "Lämmer"
 ];
 
 const challenges = [
