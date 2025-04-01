@@ -12,6 +12,13 @@ Willkommen im Archiv für Dokumente, diverse Informationen und mehr. :smile:
 
 <hr>
 
+### :fontawesome-solid-people-group: Verbündete
+
+- Harem
+- Behindis
+- orv
+- suncats
+
 ### :material-food-apple: Äpfel
 
 Anzahl bunter Äpfel zum Aufleveln:
