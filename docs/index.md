@@ -9,6 +9,8 @@ Willkommen im Archiv für Dokumente, diverse Informationen und mehr. :smile:
 - [Werte der SSR Karten (Danke an Elster)](https://drive.google.com/file/d/1df3aBtCpWeA5c6tdAaS-SU5cuKn0Px1C/view)
 - [Übersicht der Edelsteine, Effekte und Fähigkeiten (Danke an WeWe)](https://docs.google.com/document/d/1D1xLKf5k3frzplmc-OzoTGBK_OnukqNn/view) 
 - [Tips & Tricks (Danke an Maylenchen)](https://docs.google.com/document/d/1qIff2fPwty_aMW6jFcX2SpbAdU3nh94ozDURiyPZM7k)
+- [Erklärungen zu Ragna (Danke an Maylenchen)](https://docs.google.com/document/d/1N6Au3_o3WbxrWukByYTFncW7YH1pyBFUX54W3uZOeX4/edit?tab=t.0)
+
 
 <hr>
 
