@@ -2,8 +2,8 @@ site_name: Terrorluv
 site_url: https://terrorluv.vercel.app
 theme:
   name: material
-  logo: icon.png
-  favicon: icon.png
+  logo: icon.jpg
+  favicon: icon.jpg
   features:
     - navigation.tracking
     #- navigation.instant

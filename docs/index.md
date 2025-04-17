@@ -1,6 +1,8 @@
 
 Willkommen im Archiv für Dokumente, diverse Informationen und mehr. :smile:
 
+<!-- ![logo](icon.jpg){ width=50% } -->
+
 <hr>
 
 ### :octicons-link-16: Wichtige Links
@@ -63,7 +65,8 @@ Vorhersagen ohne Gewähr :wink:
 | <s>Freitag, 28. Februar 2025</s> | :material-water-well: | | :material-diamond-stone: |
 | <s>Freitag, 14. März 2025</s> | :material-water-well: | :material-shovel: | |
 | <s>Montag, 31. März 2025</s> | :material-water-well: | | :material-diamond-stone: |
-| Freitag, 18. April 2025 | :material-water-well: | :material-shovel: | |
+| <s>Freitag, 14. April 2025</s> |  | :material-shovel: | |
+| Freitag, 18. April 2025 | :material-water-well: |  | |
 | Mittwoch, 30. April 2025 | :material-water-well: | | :material-diamond-stone: |
 | Freitag, 16. Mai 2025 | :material-water-well: | :material-shovel: | |
 | Samstag, 31. Mai 2025 | :material-water-well: | | :material-diamond-stone: |
