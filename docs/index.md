@@ -1,7 +1,6 @@
 
-Willkommen im Archiv für Dokumente, diverse Informationen und mehr. :smile:
 
-<!-- ![logo](icon.jpg){ width=50% } -->
+![logo](icon.jpg)
 
 <hr>
 
