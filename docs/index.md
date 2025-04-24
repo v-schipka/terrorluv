@@ -237,5 +237,5 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
 
 ### :muscle: Truppenstärken
 
-<div class="sheet-container" data-range="truppen!A1:H45" data-ignore="1,2,4" data-sort-numeric="1,2,3,4,5,6,7"></div>
+<div class="sheet-container" data-range="truppen!A1:H47" data-ignore="1,2,4" data-sort-numeric="1,2,3,4,5,6,7"></div>
 
