@@ -66,7 +66,7 @@ Vorhersagen ohne Gewähr :wink:
 | <s>Montag, 31. März 2025</s> | :material-water-well: | | :material-diamond-stone: |
 | <s>Freitag, 14. April 2025</s> |  | :material-shovel: | |
 | <s>Freitag, 18. April 2025</s> | :material-water-well: | :material-shovel: | |
-| Mittwoch, 30. April 2025 | :material-water-well: | | :material-diamond-stone: |
+| <s>Mittwoch, 30. April 2025</s> | :material-water-well: | | :material-diamond-stone: |
 | Freitag, 16. Mai 2025 | :material-water-well: | :material-shovel: | |
 | Samstag, 31. Mai 2025 | :material-water-well: | | :material-diamond-stone: |
 | Freitag, 20. Juni 2025 | :material-water-well: | :material-shovel: | |
@@ -83,6 +83,32 @@ Vorhersagen ohne Gewähr :wink:
 | Sonntag, 30. November 2025 | :material-water-well: | :material-diamond-stone: | |
 | Freitag, 12. Dezember 2025 | :material-water-well: | | :material-shovel: |
 | Mittwoch, 31. Dezember 2025 | :material-water-well: | :material-diamond-stone: | |
+
+<hr>
+
+### :material-dolphin: Delfin-Plan
+
+| Uhrzeit | Haus | Charakter| 
+|---------|---------|---------|
+| 7 Uhr - 11 Uhr | :blue_circle: Frostheim | Tohma & Kaito |
+| 12 Uhr - 16 Uhr | :blue_circle: Frostheim | Jin |
+| 20 Uhr - 1Uhr | :blue_circle: Frostheim | Luca |
+| 7 Uhr - 11 Uhr | :red_circle: Sinostra | Ritsu |
+| 12 Uhr - 16 Uhr | :red_circle: Sinostra  | Romeo |
+| 20 Uhr - 1Uhr | :red_circle: Sinostra  | Taiga |
+| 7 Uhr - 11 Uhr | :purple_circle: Hotarubi | Subaru |
+| 12 Uhr - 16 Uhr | :purple_circle: Hotarubi  | Zenji |
+| 20 Uhr - 1Uhr | :purple_circle: Hotarubi  | Haku |
+| 12 Uhr - 16 Uhr | :black_circle: Obscuary  | Rui & Lyca |
+| 20 Uhr - 1Uhr | :black_circle: Obscuary  | Ed |
+| 12 Uhr - 16 Uhr | :green_circle: Mortkranken  | Jiro |
+| 20 Uhr - 1Uhr | :green_circle: Mortkranken  | Yuri |
+| 7 Uhr - 11 Uhr | :yellow_circle: Vagastrom | Sho |
+| 12 Uhr - 16 Uhr | :yellow_circle: Vagastrom  | Leo |
+| 20 Uhr - 1Uhr | :yellow_circle: Vagastrom  | Alan |
+| 7 Uhr - 11 Uhr | :brown_circle: Jabberwock | Ren |
+| 12 Uhr - 16 Uhr | :brown_circle: Jabberwock  | Towa |
+| 20 Uhr - 1Uhr | :brown_circle: Jabberwock  | Haru |
 
 <hr>
 
