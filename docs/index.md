@@ -80,9 +80,9 @@ Vorhersagen ohne Gewähr :wink:
 | Freitag, 17. Oktober 2025 | :material-water-well: | :material-shovel: | |
 | Freitag, 31. Oktober 2025 | :material-water-well: | | :material-diamond-stone: |
 | Freitag, 14. November 2025 | :material-water-well: | :material-shovel: | |
-| Sonntag, 30. November 2025 | :material-water-well: | :material-diamond-stone: | |
-| Freitag, 12. Dezember 2025 | :material-water-well: | | :material-shovel: |
-| Mittwoch, 31. Dezember 2025 | :material-water-well: | :material-diamond-stone: | |
+| Sonntag, 30. November 2025 | :material-water-well: |  | :material-diamond-stone: |
+| Freitag, 12. Dezember 2025 | :material-water-well: | :material-shovel: |  |
+| Mittwoch, 31. Dezember 2025 | :material-water-well: |  | :material-diamond-stone: |
 
 <hr>
 
