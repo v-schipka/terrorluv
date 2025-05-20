@@ -69,7 +69,7 @@ Vorhersagen ohne Gewähr :wink:
 | <s>Freitag, 14. April 2025</s> |  | :material-shovel: | | |
 | <s>Freitag, 18. April 2025</s> | :material-water-well: | :material-shovel: | | :material-cards: |
 | <s>Mittwoch, 30. April 2025</s> | :material-water-well: | | :material-diamond-stone: | |
-| Freitag, 16. Mai 2025 | :material-water-well: | :material-shovel: | | |
+| <s>Freitag, 16. Mai 2025</s> | :material-water-well: | :material-shovel: | | |
 | Samstag, 31. Mai 2025 | :material-water-well: | | :material-diamond-stone: | |
 | Freitag, 20. Juni 2025 | :material-water-well: | :material-shovel: | | |
 | Montag, 30. Juni 2025 | :material-water-well: | | :material-diamond-stone: | |
@@ -141,19 +141,24 @@ Am Ende des Monats werden die fertigen Bilder im *#zeichnen-challenge-bilder* Ka
 
 <script>
 const prompts = [
-  "Walpurgisnacht",
-  "Tanz in den Mai",
-  "Flieder",
-  "Dante Alighieri",
-  "Arthur Conan Doyle",
-  "Hotarubi",
-  "Jabberwock"
+  "Ghibli",
+  "J.M. Barrie (u.a. Peter Pan)",
+  "Sinostra",
+  "Vagastrom",
+  "Strand",
+  "Wald",
+  "Sommeranfang".
+  "Frühlingsende",
+  "Grillabend",
+  "Picknick"
 ];
 
 const challenges = [
   "schwarz/weiß",
   "Bleistift",
-  "Bunt(stift)"
+  "Bunt(stift)",
+  "Comic/Manga/Cartoon",
+  "Realismus"
 ];
 
 // Firebase Configuration
