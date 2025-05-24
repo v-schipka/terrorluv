@@ -254,6 +254,25 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
 
 ### :material-calculator: Kampf-Rechner
 
+#### Countdown (Metzel-down)
+
+<form id="valuesForm2">
+    <label for="angriffszeit">Angriffszeit (s):</label><br>
+    <input type="number" id="angriffszeit" name="angriffszeit" max="10" step="any" required><br>
+    <label for="enemies">Anzahl der Gegner:</label><br>
+    <input type="number" id="enemies" name="enemies" max="1000" required><br>
+
+  <button type="submit">Berechnen</button>
+</form>
+
+<div class="results-container">
+  <u><p id="timeLeft">Zeit bis zur Vernichtung:</p></u>
+</div>
+
+<hr>
+
+#### KOs
+
 <form id="valuesForm">
     <label for="angriffskraft">Angriffskraft:</label><br>
     <input type="number" id="angriffskraft" name="angriffskraft" max="80000000" step="any" required><br>
