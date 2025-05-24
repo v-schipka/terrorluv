@@ -271,7 +271,7 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
 
 <hr>
 
-#### KOs
+#### Knock-Outs
 
 <form id="valuesForm">
     <label for="angriffskraft">Angriffskraft:</label><br>
