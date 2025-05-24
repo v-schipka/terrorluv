@@ -1,5 +1,6 @@
 
 // Handle form submission and filtering for "zeit"
+
 document.getElementById('valuesForm2').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
   
@@ -9,12 +10,17 @@ document.getElementById('valuesForm2').addEventListener('submit', function(event
     const enemies = parseInt(document.getElementById('enemies').value) || 0;
 
     // Perform calculations
-    const resultSeconds = angriffszeit * enemies;
-    const timeLeft = resultSeconds / 60;
+    const totalSeconds = angriffszeit * enemies;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = Math.floor(totalSeconds % 60);
 
-    // Display the result rounded to 2 decimal places
-    document.getElementById('timeLeft').textContent = `Zeit bis zur Vernichtung: ${timeLeft.toFixed(2)} Minuten`;
+    // Format seconds as two digits
+    const formattedSeconds = seconds.toString().padStart(2, '0');
+
+    // Display result
+    document.getElementById('timeLeft').textContent = `Zeit bis zur Vernichtung: ${minutes}:${formattedSeconds} Minuten`;
 });
+
 
 // Handle form submission and filtering for "truppen"
 document.getElementById('valuesForm').addEventListener('submit', function(event) {
