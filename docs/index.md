@@ -150,7 +150,9 @@ const prompts = [
   "Sommeranfang".
   "Frühlingsende",
   "Grillabend",
-  "Picknick"
+  "Picknick",
+  "TD Katzen",
+  "TD Hausemeister"
 ];
 
 const challenges = [
@@ -158,7 +160,8 @@ const challenges = [
   "Bleistift",
   "Bunt(stift)",
   "Comic/Manga/Cartoon",
-  "Realismus"
+  "Realismus",
+  "Katzifizierung"
 ];
 
 // Firebase Configuration
