@@ -147,7 +147,7 @@ const prompts = [
   "Vagastrom",
   "Strand",
   "Wald",
-  "Sommeranfang".
+  "Sommeranfang",
   "Frühlingsende",
   "Grillabend",
   "Picknick",
