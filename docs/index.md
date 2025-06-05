@@ -293,5 +293,5 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
 
 Anwesende Spieler:
 
-<div class="sheet-container" data-range="truppen!A58:H98" data-ignore="1,2,4" data-sort-numeric="1,2,3,4,5,6,7"></div>
+<div class="sheet-container" data-range="truppen!A58:H110" data-ignore="1,2,4" data-sort-numeric="1,2,3,4,5,6,7"></div>
 

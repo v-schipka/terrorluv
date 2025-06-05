@@ -84,7 +84,7 @@ function displayTable(data, container) {
 
   const tbody = document.createElement("tbody");
 
-  data.slice(1).forEach(row => {
+  data.slice(1).filter(row => row.some(cell => cell.trim() !== "")).forEach(row => {
     const tr = document.createElement("tr");
 
     row.forEach((cell, index) => {
