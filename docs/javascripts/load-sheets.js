@@ -1,9 +1,12 @@
 
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzHfg-9tKkrE6-3IAbJ1bjAbXU77atIFGZAUMeicUDCajnOgcrCG5PO6jTJtmteCewUgQ/exec"; // Replace with your actual URL
 
+
 async function loadSheetData(container) {
-  const range = container.dataset.range || "A1:Z100"; // fallback
-  const url = `${WEB_APP_URL}?range=${encodeURIComponent(range)}`;
+  const range = container.dataset.range || "A1:Z100";
+  const timestamp = Date.now(); // Unique per request
+
+  const url = `${WEB_APP_URL}?range=${encodeURIComponent(range)}&t=${timestamp}`;
 
   try {
     const response = await fetch(url);
@@ -16,6 +19,7 @@ async function loadSheetData(container) {
     container.innerHTML = "<p>Unable to load data.</p>";
   }
 }
+
 
 // Google Sheets API connection
 /*
@@ -117,3 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".sheet-container").forEach(loadSheetData);
 });
 
+setInterval(() => {
+  document.querySelectorAll(".sheet-container").forEach(loadSheetData);
+}, 2 * 60 * 1000); // every 1 minutes
