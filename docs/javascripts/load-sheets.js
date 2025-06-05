@@ -1,4 +1,24 @@
+
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzHfg-9tKkrE6-3IAbJ1bjAbXU77atIFGZAUMeicUDCajnOgcrCG5PO6jTJtmteCewUgQ/exec"; // Replace with your actual URL
+
+async function loadSheetData(container) {
+  const range = container.dataset.range || "A1:Z100"; // fallback
+  const url = `${WEB_APP_URL}?range=${encodeURIComponent(range)}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Response not OK");
+
+    const data = await response.json();
+    displayTable(data, container);
+  } catch (error) {
+    console.error("Error loading data:", error);
+    container.innerHTML = "<p>Unable to load data.</p>";
+  }
+}
+
 // Google Sheets API connection
+/*
 const API_KEY = "AIzaSyD8rfdaN1J-Kt3xx9t5DPz_CNEzVOlY1j0"; // Replace with your API Key
 const SPREADSHEET_ID = "1un5DNaQi0TkKvEWdzyIGXXKq1IOnLCAp4e_iC6RlsAk"; // Extract the ID from your Google Sheets URL
 
@@ -19,7 +39,7 @@ async function loadSheetData(container) {
     console.error("Error loading data:", error);
   }
 }
-
+*/
 //-----------------
 
 function displayTable(data, container) {
