@@ -34,6 +34,28 @@ theme:
     
 plugins:
   - search
+  - encryptcontent:
+      esm: true
+      hash_filenames:
+        extensions:
+          - 'json'
+          - 'pdf'
+      search_index: 'encrypted'
+      encrypted_something:
+            md-footer__inner: [nav, class]
+            md-nav: [nav, class]
+      #html_template_path: "overrides/decrypt-form.tpl.html"
+      global_password: 'Uns gibt es seit Oktober 2024'
+      remember_password: True
+      title_prefix: 'test test'
+      summary: 'Tempel der TerrorLuv Götter' 
+      placeholder: 'Parole'
+      decryption_failure_message: 'Hinfort, Ungläubiger! Das war das falsche Zauberwort.'
+      encryption_info_message: 'Hinter dieser Tür wird den TerrorLuv Göttern gehuldigt. <br>Der Tempel ist nur für zertifizierte TerrorLuv-Götter-Jünger. Allen anderen: Good Luck!'
+      #button_class: 'md-button'
+      #password_button_text: 'ENTER'
+      #password_button: True
+
 
 extra_javascript:
   - javascripts/extra.js

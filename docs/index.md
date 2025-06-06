@@ -1,6 +1,6 @@
 
 
-![logo](icon.jpg)
+![logo](icon.jpg){ width=50% }
 
 <hr>
 
