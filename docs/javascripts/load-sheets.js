@@ -123,4 +123,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 setInterval(() => {
   document.querySelectorAll(".sheet-container").forEach(loadSheetData);
-}, 30 * 1000); // every 1 minutes
+}, 10 * 1000); // every 1 minutes
