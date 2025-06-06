@@ -36,10 +36,6 @@ plugins:
   - search
   - encryptcontent:
       esm: true
-      hash_filenames:
-        extensions:
-          - 'json'
-          - 'pdf'
       search_index: 'encrypted'
       encrypted_something:
             md-footer__inner: [nav, class]
