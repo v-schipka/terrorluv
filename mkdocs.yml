@@ -45,7 +45,7 @@ plugins:
             md-footer__inner: [nav, class]
             md-nav: [nav, class]
       #html_template_path: "overrides/decrypt-form.tpl.html"
-      global_password: 'Uns gibt es seit Oktober 2024'
+      global_password: 'Oktober2024'
       remember_password: True
       title_prefix: 'test test'
       summary: 'Tempel der TerrorLuv Götter' 
