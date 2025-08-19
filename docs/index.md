@@ -28,7 +28,15 @@
 
 Anzahl bunter Äpfel zum Aufleveln:
 
-<div class="sheet-container" data-range="apples!A1:E9"></div>
+| Level | Äpfel (SSR)  | Äpfel (SR)  | Äpfel (R)  |
+|-------|------|-----|----|
+| 25    | 60   | 50  | 30 |
+| 50    | 120  | 100 | 60 |
+| 75    | 240  | 200 | 90 |
+| 100   | 360  | 300 | 120|
+| 125   | 480  | 400 |   - |
+| 150   | 720  |   -  |  -  |
+| 175   | 900  |  -   |  -  |
 
 <hr>
 
@@ -36,7 +44,18 @@ Anzahl bunter Äpfel zum Aufleveln:
 
 Juwelen und deren Effekte:
 
-<div class="sheet-container" data-range="juwelen!A1:D11"></div>
+| Farbe | Abk. | Wirkung | Chara |
+|-------|-------|--------|-------|
+| Rot   | ATK   | Schaden | S-Angreifer + P-Angreifer |
+| Orange   | P-ATK   | Physisch | P-Angreifer |
+| Pink   | S-ATK   | Spez. Attacke | S-Angreifer |
+| Violett   | STR   | stärkt ATK + P-ATK | P-Angreifer |
+| Gelb   | INT   | stärkt ATK + S-ATK | S-Angreifer |
+| Weiss   | HP   | Leben | S-Angreifer + P-Angreifer |
+| Grün   | P-DEF   | physische Abwehr | P-Angreifer |
+| Dunkelblau   | S-DEF   | spez. Abwehr | S-Angreifer |
+| Hellblau   | VIT   | erhöht HP + P-DEF | P-Angreifer |
+| Schwarz   | TEN   | erhöht HP + S-DEF | S-Angreifer |
 
 <hr>
 
@@ -44,7 +63,40 @@ Juwelen und deren Effekte:
 
 Preis/Leistungsverhältnis:
 
-<div class="sheet-container" data-range="dias!A1:F33"></div>
+| Pack                | Dias | Faktor | Kosten  | Dias | Dias/Dollar|
+|---------------------|----------|-------------|-------|----------------|----------------------|
+| Shop 80     | 80       | 1           | 1.59  | 80             | 50.31               |
+| Shop 325    | 325      | 1           | 6.49  | 325            | 50.08               |
+| Shop 500    | 500      | 1           | 9.99  | 500            | 50.05               |
+| Shop 1100   | 1100     | 1           | 21.99 | 1100           | 50.02               |
+| Shop 2100   | 2100     | 1           | 41.99 | 2100           | 50.01               |
+| Shop 5000   | 5000     | 1           | 99.99 | 5000           | 50.01               |
+| Shop 80     | 80       | 2           | 1.59  | 160            | 100.63              |
+| Shop 325    | 325      | 2           | 6.49  | 650            | 100.15              |
+| Shop 500    | 500      | 2           | 9.99  | 1000           | 100.10              |
+| Shop 1100   | 1100     | 2           | 21.99 | 2200           | 100.05              |
+| Shop 2100   | 2100     | 2           | 41.99 | 4200           | 100.02              |
+| Shop 5000   | 5000     | 2           | 99.99 | 10000          | 100.01              |
+| Shop 80     | 80       | 1.5         | 1.59  | 120            | 75.47               |
+| Shop 325    | 325      | 1.5         | 6.49  | 487.5          | 75.12               |
+| Shop 500    | 500      | 1.5         | 9.99  | 750            | 75.08               |
+| Shop 1100   | 1100     | 1.5         | 21.99 | 1650           | 75.03               |
+| Shop 2100   | 2100     | 1.5         | 41.99 | 3150           | 75.02               |
+| Shop 5000   | 5000     | 1.5         | 99.99 | 7500           | 75.01               |
+| Monthly Sub         | 170      | 30          | 9.99  | 5100           | 510.51              |
+| Gleeful Gift Sub    | 50       | 7           | 1.59  | 350            | 220.13              |
+| Happy Gift Sub      | 180      | 7           | 3.69  | 1260           | 341.46              |
+| Lucky Gift Sub      | 100      | 7           | 6.59  | 700            | 106.22              |
+| Fortunate Gift Sub  | 150      | 7           | 12.49 | 1050           | 84.07               |
+| Sweet Gift Sub*     | 450      | 7           | 36.90 | 3150           | 85.37               |
+| Step Sub 1          | 170      | 7           | 11.90 | 1190           | 99.25               |
+| Step Sub 2          | 190      | 7           | 11.99 | 1330           | 110.93              |
+| Step Sub 3          | 220      | 7           | 11.99 | 1540           | 128.44              |
+| Summon Set A*       | 7940     | 1           | 61.99 | 7940           | 128.09              |
+| Summon Set B*       | 17850    | 1           | 117.99| 17850          | 151.28              |
+| Digger Set*         | 1790     | 1           | 17.99 | 1790           | 99.50               |
+| Limit Break B*      | 10500    | 1           | 107.99| 10500          | 97.23               |
+| Mission Pass        | 2800     | 1           | 9.99  | 2800           | 280.28              |
 
 <hr>
 
@@ -59,15 +111,6 @@ Vorhersagen ohne Gewähr :wink:
 
 | Datum | Brunnen | Goldmine| Bonus | Banner |
 |---------|---------|---------|---------|-------|
-| <s>Mittwoch, 30. April 2025</s> | :material-water-well: | | :material-diamond-stone: | |
-| <s>Freitag, 16. Mai 2025</s> | :material-water-well: | :material-shovel: | | |
-| <s>Samstag, 31. Mai 2025</s> | :material-water-well: | | :material-diamond-stone: | |
-| Freitag, 20. Juni 2025 | :material-water-well: | :material-shovel: | | |
-| Montag, 30. Juni 2025 | :material-water-well: | | :material-diamond-stone: | |
-| Freitag, 17. Juli 2025 | :material-water-well: | :material-shovel: | | |
-| Sonntag, 19. Juli 2025 |  |  | | :material-cards: |
-| Donnerstag, 31. Juli 2025 | :material-water-well: | | :material-diamond-stone: | |
-| Freitag, 15. August 2025 | :material-water-well: | :material-shovel: | | |
 | Sonntag, 31. August 2025 | :material-water-well: | | :material-diamond-stone: | |
 | Freitag, 12. September 2025 | :material-water-well: | :material-shovel: | | |
 | Donnerstag, 30. September 2025 | :material-water-well: | | :material-diamond-stone: | |
@@ -132,22 +175,26 @@ Am Ende des Monats werden die fertigen Bilder im *#zeichnen-challenge-bilder* Ka
 
 <script>
 const prompts = [
-  "Ghibli",
-  "J.M. Barrie (u.a. Peter Pan)",
-  "Sinostra",
-  "Vagastrom",
-  "Strand",
-  "Wald",
-  "Sommeranfang",
-  "Frühlingsende",
-  "Grillabend",
-  "Picknick",
-  "TD Katzen",
-  "TD Hausemeister"
+  "Musik",
+  "Chibi",
+  "Horror/Gothic",
+  "Anime (One Piece, Jujutsu Kaisen, Dr.Stone)",
+  "Tiere",
+  "Sci-Fi (Weltraum/Cyberspace)",
+  "Sehenswürdigkeiten",
+  "Flora/Fauna",
+  "Romance",
+  "Steampunk",
+  "Motorsport",
+  "Gaming",
+  "Sonnenuntergang",
+  "Sommerurlaub",
+  "Disney"
 ];
 
 const challenges = [
   "schwarz/weiß",
+  "Pixelart",
   "Bleistift",
   "Bunt(stift)",
   "Comic/Manga/Cartoon",
@@ -288,10 +335,4 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
     - 300 KOS -> 50 Truppen
 
 <hr>
-
-### :muscle: Truppenstärken
-
-Anwesende Spieler:
-
-<div class="sheet-container" data-range="truppen!A58:H110" data-ignore="1,2,4" data-sort-numeric="1,2,3,4,5,6,7"></div>
 

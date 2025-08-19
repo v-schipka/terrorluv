@@ -41,7 +41,7 @@ plugins:
             md-footer__inner: [nav, class]
             md-nav: [nav, class]
       #html_template_path: "overrides/decrypt-form.tpl.html"
-      global_password: 'Oktober2024'
+      global_password: 'terror2025'
       remember_password: True
       title_prefix: 'test test'
       summary: 'Tempel der TerrorLuv Götter' 
@@ -59,6 +59,7 @@ extra_javascript:
   - javascripts/hyperscript.min.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - https://unpkg.com/tablesort@5.3.0/dist/sorts/tablesort.number.min.js
+  - javascripts/tablesort.js
 
   #- javascripts/tablesort.js
 
