@@ -1,4 +1,17 @@
+<script>
+  const correctPassword = "terror2025"; // change this!
+  const entered = sessionStorage.getItem("authenticated");
 
+  if (!entered) {
+    const pass = prompt("Enter password:");
+    if (pass === correctPassword) {
+      sessionStorage.setItem("authenticated", "true");
+    } else {
+      alert("Wrong password!");
+      window.location.href = "https://google.com"; // redirect if wrong
+    }
+  }
+</script>
 
 ![logo](icon.jpg){ width=50% }
 
