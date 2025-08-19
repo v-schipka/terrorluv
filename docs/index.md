@@ -347,5 +347,3 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
     - 250 KOs -> 42 Truppen
     - 300 KOS -> 50 Truppen
 
-<hr>
-
