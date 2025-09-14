@@ -326,7 +326,7 @@ localStorage.setItem("currentChallenge", selectedChallenge); // Save the challen
 
 <form id="valuesForm">
     <label for="angriffskraft">Angriffskraft:</label><br>
-    <input type="number" id="angriffskraft" name="angriffskraft" max="80000000" step="any" required><br>
+    <input type="number" id="angriffskraft" name="angriffskraft" max="180000000" step="any" required><br>
     <label for="ko">Knock-Outs:</label><br>
     <input type="number" id="ko" name="ko" max="1000" required><br>
 
