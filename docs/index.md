@@ -188,21 +188,17 @@ Am Ende des Monats werden die fertigen Bilder im *#zeichnen-challenge-bilder* Ka
 
 <script>
 const prompts = [
-  "Musik",
-  "Chibi",
-  "Horror/Gothic",
-  "Anime (One Piece, Jujutsu Kaisen, Dr.Stone)",
-  "Tiere",
-  "Sci-Fi (Weltraum/Cyberspace)",
-  "Sehenswürdigkeiten",
-  "Flora/Fauna",
-  "Romance",
-  "Steampunk",
-  "Motorsport",
-  "Gaming",
-  "Sonnenuntergang",
-  "Sommerurlaub",
-  "Disney"
+  "Herbstzeit",
+  "Raben",
+  "finsterer Wald",
+  "Vogelscheuche",
+  "Cozy",
+  "Halloween",
+  "1 jähriges Terrorluv",
+  "Samhain",
+  "Tim Burton",
+  "Obscuary",
+  "LAIKA Studios"
 ];
 
 const challenges = [
